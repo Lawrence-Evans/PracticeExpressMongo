@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+</head>
+<body>
+    <h1><%= category%> Products</h1>
+    <ul>
+        <% for(let product of products) { %>
+        <li><a href="/products/<%= product._id %>"><%= product.name %></a> </li>
+        <% }%>
+    </ul>
+    <!-- <a href="/products/new">Add new product</a> -->
+    <!-- Products added before they were associated with farms not working in the show page. -->
+    <%if(category !== 'All') {%>
+    <a href="/products">All products</a>
+    <% } %>
+    <a href="/farms">Back to all farms</a>
+    <div>New products are added via the farm page.</div>
+</body>
+</html>
